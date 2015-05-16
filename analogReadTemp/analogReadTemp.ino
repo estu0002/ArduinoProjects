@@ -1,5 +1,5 @@
 /**************************************************************************************
- * Example program demonstrating I/O for SD card
+ * Example program demonstrating I/O for LM35 temperature sensor
  *
  * Device: http://www.ti.com/lit/ds/symlink/lm35.pdf
  * References:
