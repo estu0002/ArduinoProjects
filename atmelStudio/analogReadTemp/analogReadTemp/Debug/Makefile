@@ -38,8 +38,8 @@ SUBDIRS :=  \
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS +=  \
-../analogReadTemp.cpp \
-../libs/main.cpp
+../../../../../../../../arduino-1.6.3/hardware/arduino/avr/cores/arduino/main.cpp \
+../analogReadTemp.cpp
 
 
 PREPROCESSING_SRCS += 
@@ -49,20 +49,20 @@ ASM_SRCS +=
 
 
 OBJS +=  \
-analogReadTemp.o \
-libs/main.o
+libs/main.o \
+analogReadTemp.o
 
 OBJS_AS_ARGS +=  \
-analogReadTemp.o \
-libs/main.o
+libs/main.o \
+analogReadTemp.o
 
 C_DEPS +=  \
-analogReadTemp.d \
-libs/main.d
+libs/main.d \
+analogReadTemp.d
 
 C_DEPS_AS_ARGS +=  \
-analogReadTemp.d \
-libs/main.d
+libs/main.d \
+analogReadTemp.d
 
 OUTPUT_FILE_PATH +=analogReadTemp.elf
 
@@ -84,14 +84,14 @@ LINKER_SCRIPT_DEP+=
 
 
 
-./%.o: .././%.cpp
+libs/%.o: ../../../../../../../../arduino-1.6.3/hardware/arduino/avr/cores/arduino/%.cpp
 	@echo Building file: $<
 	@echo Invoking: AVR8/GNU C Compiler : 4.8.1
 	$(QUOTE)C:\Program Files (x86)\Atmel\Atmel Toolchain\AVR8 GCC\Native\3.4.1061\avr8-gnu-toolchain\bin\avr-g++.exe$(QUOTE) -funsigned-char -funsigned-bitfields -DF_CPU=16000000L -DARDUINO=163 -DDEBUG  -I"C:\arduino-1.6.3\hardware\arduino\avr\cores\arduino" -I"C:\arduino-1.6.3\hardware\arduino\avr\variants\standard"  -Os -fdata-sections -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega328p -c -fno-exceptions -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
 	@echo Finished building: $<
 	
 
-libs/%.o: ../libs/%.cpp
+./%.o: .././%.cpp
 	@echo Building file: $<
 	@echo Invoking: AVR8/GNU C Compiler : 4.8.1
 	$(QUOTE)C:\Program Files (x86)\Atmel\Atmel Toolchain\AVR8 GCC\Native\3.4.1061\avr8-gnu-toolchain\bin\avr-g++.exe$(QUOTE) -funsigned-char -funsigned-bitfields -DF_CPU=16000000L -DARDUINO=163 -DDEBUG  -I"C:\arduino-1.6.3\hardware\arduino\avr\cores\arduino" -I"C:\arduino-1.6.3\hardware\arduino\avr\variants\standard"  -Os -fdata-sections -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega328p -c -fno-exceptions -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
