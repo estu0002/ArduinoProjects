@@ -23,11 +23,12 @@ void setup() {
   // start the RTC
   rtc.begin();
 
-  // comment to set the date and time
-//  rtc.setDOW(FRIDAY);     // Set Day-of-Week to SUNDAY
-//  rtc.setTime(11, 24, 0);     // Set the time to 12:00:00 (24hr format)
-//  rtc.setDate(2, 12, 2016);   // Set the date to January 1st, 2014
-  
+  // uncomment to set the date and time
+//  Serial.begin(9600);   // hack to give reliable time setting; time is set when serial terminal is opened up
+//  rtc.setDOW(TUESDAY);     // Set Day-of-Week to SUNDAY
+//  rtc.setTime(19, 30, 0);     // Set the time - HH, MM, SS (24hr format)
+//  rtc.setDate(16, 2, 2016);   // Set the date  - DD, MM, YYYY
+    
 }
 
 void loop() {
